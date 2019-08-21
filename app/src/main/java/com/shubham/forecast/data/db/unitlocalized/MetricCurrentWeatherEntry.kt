@@ -3,11 +3,10 @@ package com.shubham.forecast.data.db.unitlocalized
 import androidx.room.ColumnInfo
 
 data class MetricCurrentWeatherEntry(
-
     @ColumnInfo(name = "tempC")
     override val temperature: Double,
     @ColumnInfo(name = "condition_text")
-    override val cnditionText: String,
+    override val conditionText: String,
     @ColumnInfo(name = "condition_icon")
     override val conditionIconUrl: String,
     @ColumnInfo(name = "windKph")
@@ -15,10 +14,9 @@ data class MetricCurrentWeatherEntry(
     @ColumnInfo(name = "windDir")
     override val windDirection: String,
     @ColumnInfo(name = "precipMm")
-    override val precipitation: Double,
-    @ColumnInfo(name = "feelsLikeC")
+    override val precipitationVolume: Double,
+    @ColumnInfo(name = "feelslikeC")
     override val feelsLikeTemperature: Double,
     @ColumnInfo(name = "visKm")
     override val visibilityDistance: Double
-) : UnitSpecificCurrentWeatherEntry {
-}
+) : UnitSpecificCurrentWeatherEntry

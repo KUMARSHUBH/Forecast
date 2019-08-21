@@ -7,7 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.shubham.forecast.data.db.entity.CURRENT_WEATHER_ID
 import com.shubham.forecast.data.db.entity.CurrentWeatherEntry
-import com.shubham.forecast.data.db.unitlocalized.ImperialCurrentWeatheEntry
+import com.shubham.forecast.data.db.unitlocalized.ImperialCurrentWeatherEntry
 import com.shubham.forecast.data.db.unitlocalized.MetricCurrentWeatherEntry
 
 @Dao
@@ -21,5 +21,5 @@ interface CurrentWeatherDao {
 
 
     @Query("SELECT * FROM current_weather where id = $CURRENT_WEATHER_ID")
-    fun getWeatherImperial():LiveData<ImperialCurrentWeatheEntry>
+    fun getWeatherImperial():LiveData<ImperialCurrentWeatherEntry>
 }
