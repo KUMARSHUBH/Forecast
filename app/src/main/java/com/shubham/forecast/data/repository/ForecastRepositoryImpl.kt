@@ -24,7 +24,7 @@ class ForecastRepositoryImpl(
             persistFetchedCurrentWeather(newCurrentWeather)
         }
     }
-    override suspend fun getCurrentWeatherEntry(metric: Boolean): LiveData<out UnitSpecificCurrentWeatherEntry> {
+    override suspend fun getCurrentWeather(metric: Boolean): LiveData<out UnitSpecificCurrentWeatherEntry> {
        return withContext(Dispatchers.IO){
            initWeatherData()
            return@withContext if (metric) currentWeatherDao.getWeatherMetric()
