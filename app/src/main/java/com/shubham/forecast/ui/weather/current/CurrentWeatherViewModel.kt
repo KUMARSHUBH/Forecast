@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel;
 import com.shubham.forecast.data.provider.UnitProvider
 import com.shubham.forecast.data.repository.ForecastRepository
 import com.shubham.forecast.internal.UnitSystem
-import com.shubham.forecast.internal.lazyDefered
+import com.shubham.forecast.internal.lazyDeferred
 
 class CurrentWeatherViewModel(
     private val forecastRepository: ForecastRepository,
@@ -16,8 +16,12 @@ class CurrentWeatherViewModel(
     val isMetric: Boolean
         get() = unitSystem == UnitSystem.METRIC
 
-    val weather by lazyDefered {
+    val weather by lazyDeferred {
         forecastRepository.getCurrentWeather(isMetric)
+    }
+
+    val weatherLocation by lazyDeferred{
+        forecastRepository.getWeatherLocation()
     }
 
 }
