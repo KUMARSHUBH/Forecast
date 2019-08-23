@@ -44,7 +44,7 @@ class ForecastRepositoryImpl(
         val lastWeatherLocation = weatherLocationDao.getLocation().value
 
         if(lastWeatherLocation == null ||
-            locationProvider.hasLocationChange(lastWeatherLocation)){
+            locationProvider.hasLocationChanged(lastWeatherLocation)){
             fetchCurrentWeather()
             return
         }
