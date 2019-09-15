@@ -1,4 +1,4 @@
-package com.shubham.forecast.data.db.unitlocalized
+package com.shubham.forecast.data.db.unitlocalized.current
 
 import androidx.room.ColumnInfo
 

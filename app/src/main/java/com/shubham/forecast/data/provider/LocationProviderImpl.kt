@@ -71,7 +71,8 @@ class LocationProviderImpl(
         return preferences.getBoolean(USE_DEVICE_LOCATION, true)
     }
 
-    private fun getCustomLocationName(): String? {
+    private fun
+            getCustomLocationName(): String? {
         return preferences.getString(CUSTOM_LOCATION, null)
     }
 

@@ -24,7 +24,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
+
+androidExtensions{
+
+    experimental = true
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -78,7 +85,7 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
 
     //Preference
-    implementation 'androidx.preference:preference:1.0.0'
+    implementation 'androidx.preference:preference:1.1.0'
 
     //Groupie
     implementation "com.xwray:groupie:2.5.0"

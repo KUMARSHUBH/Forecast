@@ -2,7 +2,7 @@ package com.shubham.forecast.data.db.entity
 
 
 data class Condition(
-    val code: Int,
+    val text: String,
     val icon: String,
-    val text: String
+    val code: Int
 )

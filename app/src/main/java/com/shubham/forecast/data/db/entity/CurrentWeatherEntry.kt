@@ -36,7 +36,7 @@ data class CurrentWeatherEntry(
     val visKm: Double,
     @SerializedName("vis_miles")
     val visMiles: Double
-){
+) {
     @PrimaryKey(autoGenerate = false)
-    var id:Int = CURRENT_WEATHER_ID
+    var id: Int = CURRENT_WEATHER_ID
 }

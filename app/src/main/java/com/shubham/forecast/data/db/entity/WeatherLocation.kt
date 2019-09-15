@@ -21,14 +21,14 @@ data class WeatherLocation(
     val tzId: String,
     @SerializedName("localtime_epoch")
     val localtimeEpoch: Long
-){
+) {
     @PrimaryKey(autoGenerate = false)
-    var id:Int = WEATHER_LOCATION_ID
+    var id: Int = WEATHER_LOCATION_ID
 
-    val zonedDateTime:ZonedDateTime
+    val zonedDateTime: ZonedDateTime
         get() {
             val instant = Instant.ofEpochSecond(localtimeEpoch)
             val zoneId = ZoneId.of(tzId)
-            return ZonedDateTime.ofInstant(instant,zoneId)
+            return ZonedDateTime.ofInstant(instant, zoneId)
         }
 }
