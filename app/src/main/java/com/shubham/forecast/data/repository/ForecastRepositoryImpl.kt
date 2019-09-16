@@ -6,7 +6,8 @@ import com.shubham.forecast.data.db.FutureWeatherDao
 import com.shubham.forecast.data.db.entity.WeatherLocation
 import com.shubham.forecast.data.db.unitlocalized.WeatherLocationDao
 import com.shubham.forecast.data.db.unitlocalized.current.UnitSpecificCurrentWeatherEntry
-import com.shubham.forecast.data.db.unitlocalized.future.UnitSpecificSimpleFutureWeatherEntry
+import com.shubham.forecast.data.db.unitlocalized.future.detail.UnitSpecificDetailFutureWeatherEntry
+import com.shubham.forecast.data.db.unitlocalized.future.list.UnitSpecificSimpleFutureWeatherEntry
 import com.shubham.forecast.data.network.FORECAST_DAYS_COUNT
 import com.shubham.forecast.data.network.WeatherNetworkDataSource
 import com.shubham.forecast.data.network.response.CurrentWeatherResponse
@@ -27,6 +28,17 @@ class ForecastRepositoryImpl(
     private val weatherNetworkDataSource: WeatherNetworkDataSource,
     private val locationProvider: LocationProvider
 ) : ForecastRepository {
+
+    override suspend fun getFutureWeatherByDate(
+        date: LocalDate,
+        metric: Boolean
+    ): LiveData<out UnitSpecificDetailFutureWeatherEntry> {
+        return withContext(Dispatchers.IO){
+            initWeatherData()
+            return@withContext if (metric) futureWeatherDao.getDetailedWeatherByDateMetric(date)
+            else futureWeatherDao.getDetailedWeatherByDateImperial(date)
+        }
+    }
 
     init {
         weatherNetworkDataSource.apply {

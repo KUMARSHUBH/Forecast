@@ -1,8 +1,8 @@
 package com.shubham.forecast.ui.weather.future.list
 
 import com.shubham.forecast.R
-import com.shubham.forecast.data.db.unitlocalized.future.MetricSimpleFutureWeatherEntry
-import com.shubham.forecast.data.db.unitlocalized.future.UnitSpecificSimpleFutureWeatherEntry
+import com.shubham.forecast.data.db.unitlocalized.future.list.MetricSimpleFutureWeatherEntry
+import com.shubham.forecast.data.db.unitlocalized.future.list.UnitSpecificSimpleFutureWeatherEntry
 import com.shubham.forecast.internal.Glide.GlideApp
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
